@@ -1,5 +1,5 @@
 import React from "react";
-import { Formik, useFormik } from "formik";
+import { useFormik } from "formik";
 
 const initialValues = {
   name: "",
@@ -46,9 +46,10 @@ const YoutubeForm = () => {
               name="name"
               id="name"
               onChange={formik.handleChange}
+              onBlur={formik.handleBlur}
               value={formik.values.name}
             />
-            {formik.errors.name && (
+            {formik.touched.name && formik.errors.name && (
               <div className="error">{formik.errors.name}</div>
             )}
           </div>
@@ -60,9 +61,10 @@ const YoutubeForm = () => {
               name="email"
               id="email"
               onChange={formik.handleChange}
+              onBlur={formik.handleBlur}
               value={formik.values.email}
             />
-            {formik.errors.email && (
+            {formik.touched.email && formik.errors.email && (
               <div className="error">{formik.errors.email}</div>
             )}
           </div>
@@ -73,9 +75,10 @@ const YoutubeForm = () => {
               name="channel"
               id="channel"
               onChange={formik.handleChange}
+              onBlur={formik.handleBlur}
               value={formik.values.channel}
             />
-            {formik.errors.channel && (
+            {formik.touched.channel && formik.errors.channel && (
               <div className="error">{formik.errors.channel}</div>
             )}
           </div>
